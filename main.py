@@ -42,3 +42,7 @@ def borrar_nota(nota_id: int):
             return {"mensaje": "Nota eliminada"}
 
     raise HTTPException(status_code=404, detail="Nota no encontrada")
+
+@app.get("/")
+def inicio():
+    return {"mensaje": "API de notas funcionando correctamente 🚀", "endpoints": ["/notas", "/docs"]}
